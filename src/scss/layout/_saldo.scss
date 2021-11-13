@@ -1,0 +1,74 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.saldo-container {
+  height: 30vh;
+  background: url(../../img/fondo.png), #7b4397;
+  background: url(../../img/fondo.png),
+    -webkit-gradient(linear, right top, left top, from(#7b4397), to(#dc2430));
+  background: url(../../img/fondo.png), linear-gradient(to left, #7b4397, #dc2430);
+  text-align: center;
+
+  @include m.telefono {
+    height: 40vh;
+  }
+
+  .saldo {
+    width: 65%;
+
+    @include m.telefono {
+      width: 52vh;
+    }
+
+    margin: 0 auto;
+    color: #fff;
+    overflow: hidden;
+  }
+
+  .saldo-titulo {
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 300;
+      margin-bottom: 0.6rem;
+    }
+
+    p {
+      font-size: 2.3rem;
+      font-weight: 500;
+      margin: 0;
+      letter-spacing: .25rem;
+    }
+  }
+
+  .saldo-ingresos,
+  .saldo-gastos {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+	margin-top: .7rem;
+	* {
+		margin: .5rem;
+		padding-inline-start: .7rem;
+	}
+	span{
+		margin: 0;
+		padding: 0;
+	}
+
+	h3{
+		font-size: .9rem;
+		font-weight: 300;
+	}
+	p {
+		letter-spacing: .1rem;
+	}
+  }
+
+  .saldo-ingresos {
+	  background-color: v.$green;
+	  margin-top: 1.7rem;
+  }
+  .saldo-gastos {
+	  background-color: v.$red;
+  }
+}

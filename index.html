@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App Finanzas</title>
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body onload="cargarApp()">
+    <!--***   SALDO   ***-->
+    <div class="saldo-container">
+        <div class="saldo">
+            <div class="saldo-titulo">
+                <h2>Saldo Disponible</h2>
+                <p id="saldo">2810,00$</p>
+            </div>
+            <div class="saldo-ingresos">
+                <h3>Ingresos</h3>
+                <p id="ingresos">2810,00$</p>
+            </div>
+            <div class="saldo-gastos">
+                <h3>gastos</h3>
+                <p id="gastos">2810,00$</p>
+            </div>
+        </div>
+    </div>
+    <!--***   /SALDO   ***-->
+
+    <!--***   FORMULARIO   ***-->
+    <div class="container">
+        <form id="forma" class="formulario" onsubmit="return false;">
+            <div class="agregar_contenedor">
+                <select class="agregar_tipo" id="tipo">
+                    <option value="ingreso" selected>+</option>
+                    <option value="gasto">-</option>
+                </select>
+                <input type="text" class="agregar_descripcion" placeholder="Agregar Descripción" id="descripcion" />
+                <input type="number" class="agregar_valor" placeholder="Valor" id="valor" step="any" />
+                <button class="agregar_btn" onclick="agregarDato()">
+                    <img src="/src/img/check.png" alt="" />
+                </button>
+            </div>
+        </form>
+    </div>
+    <!--***   /FORMULARIO   ***-->
+
+    <!--***   DETALLES   ***-->
+    <div class="contenedor-detalles">
+        <div class="ingreso">
+            <h2 class="ingreso_titulo">Ingresos</h2>
+            <div id="lista-ingresos">
+                <div class="elemento">
+                    <div class="elemento_descripcion">Salario</div>
+                    <div class="elemento_valor">+ 2,200.00
+                        <div class="elemento_eliminar">
+                            <button class="elemento_eliminar--btn">
+                                <img src="/src/img/close.png" alt="" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="elemento">
+                    <div class="elemento_descripcion">Salario</div>
+                    <div class="elemento_valor">+ 2,200.00
+                        <div class="elemento_eliminar">
+                            <button class="elemento_eliminar--btn">
+                                <img src="/src/img/close.png" alt="" onclick='eliminarIngreso()'/>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gasto">
+            <h2 class="gasto_titulo">Gastos</h2>
+            <div id="lista-gastos">
+                <div class="elemento">
+                    <div class="elemento_descripcion">Salario</div>
+                    <div class="elemento_valor">+ 2,200.00
+                        <div class="elemento_eliminar">
+                            <button class="elemento_eliminar--btn">
+                                <img src="/src/img/cancel.png" alt="" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="elemento">
+                    <div class="elemento_descripcion">Salario</div>
+                    <div class="elemento_valor">+ 2,200.00
+                        <div class="elemento_eliminar">
+                            <button class="elemento_eliminar--btn">
+                                <img src="/src/img/cancel.png" alt="" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--***   /DETALLES   ***-->
+
+    <script src='js/Dato.js'></script>
+    <script src='js/Ingreso.js'></script>
+    <script src='js/Gasto.js'></script>
+    <script src='js/app.js'></script>
+</body>
+
+</html>

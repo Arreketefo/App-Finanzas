@@ -1,0 +1,11 @@
+@use "variables" as v;
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: v.$main_source;
+  font-weight: 300;
+}
