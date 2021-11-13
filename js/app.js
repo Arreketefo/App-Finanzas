@@ -84,10 +84,10 @@ const cargarGastos = ()=>{
 const crearGastoHTML = (gasto)=>{
     let gastoHTML =  `<div class="elemento">
     <div class="elemento_descripcion">${gasto.descripcion}</div>
-    <div class="elemento_valor">+ ${formatoMoneda(gasto.valor)}
+    <div class="elemento_valor">- ${formatoMoneda(gasto.valor)}
         <div class="elemento_eliminar">
             <button class="elemento_eliminar--btn">
-                <img src="/src/img/close.png" alt="" onclick='eliminarIngreso(${gasto.id})'/>
+                <img src="/src/img/cancel.png" alt="" onclick='eliminarGasto(${gasto.id})'/>
             </button>
         </div>
     </div>
